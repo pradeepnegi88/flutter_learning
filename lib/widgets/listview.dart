@@ -7,28 +7,49 @@ class RandomWords extends StatefulWidget {
 }
 
 class _RandomWordsState extends State<RandomWords> {
+  final _suggestions = <WordPair>[];
+  final _saved = Set<WordPair>();
+  final _biggerFont = TextStyle(
+    fontSize: 18.0,
+  );
+  @override
+  void initState() {
+    super.initState();
+    for (int i = 0; i < 30; i++) {
+      _suggestions.addAll(generateWordPairs().take(10));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    final _suggestions = <WordPair>[];
-    final _biggerFont = TextStyle(
-      fontSize: 18.0,
-    );
+    Widget _buildRow(WordPair pair) {
+      final alreadySaved = _saved.contains(pair);
+      return ListTile(
+        title: Text(
+          pair.asPascalCase,
+          style: _biggerFont,
+        ),
+        trailing: Icon(
+          alreadySaved ? Icons.favorite : Icons.favorite_border,
+          color: alreadySaved ? Colors.red : null,
+        ),
+        onTap: () {
+          setState(() {
+            if (alreadySaved) {
+              _saved.remove(pair);
+            } else {
+              _saved.add(pair);
+            }
+          });
+        },
+      );
+    }
 
     return ListView.builder(
         padding: EdgeInsets.all(16.0),
-        itemCount: 100,
+        itemCount: _suggestions.length,
         itemBuilder: (context, i) {
-          if (i.isOdd) return Divider(); /*2*/
-          final index = i ~/ 2; /*3*/
-          if (index >= _suggestions.length) {
-            _suggestions.addAll(generateWordPairs().take(10)); /*4*/
-          }
-          return ListTile(
-            title: Text(
-              _suggestions[index].asPascalCase,
-              style: _biggerFont,
-            ),
-          );
+          return _buildRow(_suggestions[i]);
         });
   }
 }
