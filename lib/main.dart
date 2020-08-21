@@ -1,4 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/listview.dart';
+import 'package:myapp/widgets/myappbar.dart';
 
-void main() => runApp(RandomWords());
+void main() => runApp(MyAppBar());
