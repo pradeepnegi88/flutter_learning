@@ -46,7 +46,15 @@ class ContainerWidget extends StatelessWidget {
                     Radius.circular(18),
                   ),
                 ),
-              )
+              ),
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  color: Colors.deepOrange,
+                  shape: BoxShape.circle,
+                ),
+              ),
             ],
           ),
           decoration: BoxDecoration(
