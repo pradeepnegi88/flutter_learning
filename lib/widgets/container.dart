@@ -15,7 +15,9 @@ class ContainerWidget extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
           child: Text("Container"),
-          color: Colors.greenAccent,
+          decoration: BoxDecoration(
+            color: Colors.greenAccent,
+          ),
         ),
       ),
     );
