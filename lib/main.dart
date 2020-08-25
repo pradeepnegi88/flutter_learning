@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/stack.dart';
+import 'package:myapp/widgets/expanded.dart';
 
-void main() => runApp(StackWidget());
+void main() => runApp(ExpandedWidget());
