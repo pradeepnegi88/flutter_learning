@@ -33,6 +33,20 @@ class ContainerWidget extends StatelessWidget {
                       width: 5,
                     )),
               ),
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  color: Colors.pink,
+                  border: Border.all(
+                    color: Colors.black26,
+                    width: 5,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(18),
+                  ),
+                ),
+              )
             ],
           ),
           decoration: BoxDecoration(
