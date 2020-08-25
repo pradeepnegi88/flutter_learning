@@ -23,15 +23,19 @@ class ContainerWidget extends StatelessWidget {
                 width: 300,
                 height: 300,
                 decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          "https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png"),
-                    ),
-                    border: Border.all(
-                      color: Colors.red,
-                      width: 5,
-                    )),
+                  color: Colors.yellow,
+                  image: DecorationImage(
+                    image: NetworkImage(
+                        "https://flutter.dev/assets/flutter-lockup-1caf6476beed76adec3c477586da54de6b552b2f42108ec5bc68dc63bae2df75.png"),
+                  ),
+                  border: Border.all(
+                    color: Colors.red,
+                    width: 5,
+                  ),
+                  gradient: LinearGradient(
+                    colors: [Colors.blue, Colors.green],
+                  ),
+                ),
               ),
               Container(
                 width: 100,
