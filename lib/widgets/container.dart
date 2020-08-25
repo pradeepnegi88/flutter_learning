@@ -33,7 +33,10 @@ class ContainerWidget extends StatelessWidget {
                     width: 5,
                   ),
                   gradient: LinearGradient(
-                    colors: [Colors.blue, Colors.green],
+                    colors: [
+                      Colors.blue,
+                      Colors.green,
+                    ],
                   ),
                 ),
               ),
@@ -54,13 +57,20 @@ class ContainerWidget extends StatelessWidget {
                 width: 50,
                 height: 50,
                 decoration: BoxDecoration(
-                  color: Colors.deepOrange,
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Colors.green,
-                    width: 2,
-                  ),
-                ),
+                    color: Colors.deepOrange,
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.green,
+                      width: 2,
+                    ),
+                    gradient: RadialGradient(colors: [
+                      Colors.orange,
+                      Colors.white,
+                      Colors.green,
+                    ], stops: [
+                      0.4,
+                      1.0,
+                    ])),
               ),
             ],
           ),
