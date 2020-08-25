@@ -12,6 +12,7 @@ class ContainerWidget extends StatelessWidget {
           title: Text("Container"),
         ),
         body: Container(
+          child: Text("Container"),
           color: Colors.greenAccent,
         ),
       ),
