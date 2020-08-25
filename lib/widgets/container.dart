@@ -53,6 +53,10 @@ class ContainerWidget extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.deepOrange,
                   shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.green,
+                    width: 2,
+                  ),
                 ),
               ),
             ],
