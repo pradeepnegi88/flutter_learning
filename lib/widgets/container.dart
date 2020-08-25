@@ -18,6 +18,9 @@ class ContainerWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.greenAccent,
           ),
+          foregroundDecoration: BoxDecoration(
+            color: Colors.red.withOpacity(0.5),
+          ),
         ),
       ),
     );
