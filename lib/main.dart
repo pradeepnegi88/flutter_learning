@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/intrinsic_w_h.dart';
+import 'package:myapp/widgets/stack.dart';
 
-void main() => runApp(IntrinsicWH());
+void main() => runApp(StackWidget());
