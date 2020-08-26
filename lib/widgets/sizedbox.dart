@@ -35,11 +35,47 @@ class SizedBoxWidget extends StatelessWidget {
                   Icons.star,
                   size: 50,
                 ),
+                WidgetGone(),
               ],
             ),
             color: Colors.redAccent,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class WidgetGone extends StatefulWidget {
+  @override
+  _WidgetGoneState createState() => _WidgetGoneState();
+}
+
+class _WidgetGoneState extends State<WidgetGone> {
+  bool isClicked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          isClicked
+              ? Icon(
+                  Icons.stars,
+                  color: Colors.teal,
+                  size: 50,
+                )
+              : SizedBox(),
+          RaisedButton(
+            onPressed: () {
+              setState(
+                () {
+                  isClicked = !isClicked;
+                },
+              );
+            },
+            child: Text("Toggle"),
+          )
+        ],
       ),
     );
   }
