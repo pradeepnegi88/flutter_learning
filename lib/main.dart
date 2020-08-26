@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/material.dart';
+import 'package:myapp/widgets/silver.dart';
 
-void main() => runApp(MaterialWidget());
+void main() => runApp(SilverWidget());
