@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/container.dart';
+import 'package:myapp/widgets/material.dart';
 
-void main() => runApp(ContainerWidget());
+void main() => runApp(MaterialWidget());
