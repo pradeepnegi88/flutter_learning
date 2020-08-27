@@ -7,6 +7,7 @@ class DropDownWidget extends StatefulWidget {
 
 class _DropDownWidgetState extends State<DropDownWidget> {
   List<String> _courses;
+
   String selectedItem;
   @override
   void initState() {
