@@ -24,7 +24,29 @@ class _DropDownWidgetState extends State<DropDownWidget> {
         canvasColor: Colors.green.shade200,
       ),
       home: Scaffold(
-        appBar: AppBar(title: Text("DropdownButton")),
+        appBar: AppBar(
+          title: Text("DropdownButton"),
+          actions: [
+            PopupMenuButton(
+              itemBuilder: (context) {
+                return _courses
+                    .map(
+                      (value) => PopupMenuItem(
+                        child: Text(value),
+                        value: value,
+                      ),
+                    )
+                    .toList();
+              },
+              onCanceled: () {},
+              onSelected: (value) {
+                setState(() {
+                  selectedItem = value;
+                });
+              },
+            )
+          ],
+        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
