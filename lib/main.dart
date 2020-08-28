@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/tab.dart';
+import 'package:myapp/widgets/theme.dart';
 
-void main() => runApp(TabWidget());
+void main() => runApp(ThemeWidget());

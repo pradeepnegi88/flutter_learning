@@ -16,9 +16,9 @@ class TabWidget extends StatelessWidget {
             title: Text("Flutter tabs"),
             bottom: TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_bike, color: Colors.white)),
-                Tab(icon: Icon(Icons.directions_car, color: Colors.white)),
-                Tab(icon: Icon(Icons.directions_bus, color: Colors.white)),
+                Tab(icon: Icon(Icons.directions_bike)),
+                Tab(icon: Icon(Icons.directions_car)),
+                Tab(icon: Icon(Icons.directions_bus)),
               ],
             ),
           ),
