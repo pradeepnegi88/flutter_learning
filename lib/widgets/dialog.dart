@@ -27,6 +27,13 @@ class Home extends StatelessWidget {
                   builder: (BuildContext context) => AlertDialog(
                     title: Text("My Alert Dialog"),
                     content: Text("This is the Alert Dialog content ........ "),
+                    actions: [
+                      RaisedButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Close"))
+                    ],
                   ),
                 );
               },
