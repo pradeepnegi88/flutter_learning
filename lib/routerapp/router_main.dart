@@ -11,6 +11,10 @@ import 'package:myapp/routerapp/routes/second.dart';
 class RouterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var mainRoutes = {
+      "/": (context) => Home(),
+      "/second": (context) => SecondScreen()
+    };
     return MaterialApp(
       title: "Router App",
       theme: ThemeData(
@@ -19,10 +23,7 @@ class RouterWidget extends StatelessWidget {
       ),
       // home: Home(),
       initialRoute: "/",
-      routes: {
-        "/": (context) => Home(),
-        "/second": (context) => SecondScreen()
-      },
+      routes: mainRoutes,
     );
   }
 }
