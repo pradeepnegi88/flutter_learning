@@ -75,7 +75,12 @@ class SnackBarWidget extends StatelessWidget {
           onPressed: () {
             scafforlKey.currentState.showSnackBar(
               SnackBar(
+                backgroundColor: Colors.black,
                 content: Text("Flutter SnackBar snackbar"),
+                action: SnackBarAction(
+                  label: "Undo",
+                  onPressed: () {},
+                ),
               ),
             );
           },
