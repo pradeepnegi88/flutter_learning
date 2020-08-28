@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/gridview.dart';
+import 'package:myapp/widgets/dialog.dart';
 
-void main() => runApp(GridViewWidget());
+void main() => runApp(DialogWidget());
