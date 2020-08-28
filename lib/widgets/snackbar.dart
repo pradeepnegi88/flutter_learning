@@ -68,7 +68,18 @@ class SnackBarWidget extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: FAB(),
+        floatingActionButton: Builder(builder: (context) {
+          return FloatingActionButton(
+            child: Icon(Icons.plus_one),
+            onPressed: () {
+              Scaffold.of(context).showSnackBar(
+                SnackBar(
+                  content: Text("Flutter SnackBar builder"),
+                ),
+              );
+            },
+          );
+        }),
       ),
     );
   }
@@ -76,6 +87,8 @@ class SnackBarWidget extends StatelessWidget {
 
 // 3 Solutions for context
 // First is build function
+// Second using the builder widget
+// Third global key
 
 class FAB extends StatelessWidget {
   @override
@@ -85,7 +98,7 @@ class FAB extends StatelessWidget {
       onPressed: () {
         Scaffold.of(context).showSnackBar(
           SnackBar(
-            content: Text("Flutter SnackBar"),
+            content: Text("Flutter SnackBar build function"),
           ),
         );
       },
