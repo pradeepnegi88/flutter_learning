@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SnackBarWidget extends StatelessWidget {
+  final scafforlKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,6 +12,7 @@ class SnackBarWidget extends StatelessWidget {
         primarySwatch: Colors.pink,
       ),
       home: Scaffold(
+        key: scafforlKey,
         appBar: AppBar(
           title: Text("NavigationBar"),
         ),
@@ -68,18 +70,16 @@ class SnackBarWidget extends StatelessWidget {
             ],
           ),
         ),
-        floatingActionButton: Builder(builder: (context) {
-          return FloatingActionButton(
-            child: Icon(Icons.plus_one),
-            onPressed: () {
-              Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  content: Text("Flutter SnackBar builder"),
-                ),
-              );
-            },
-          );
-        }),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.plus_one),
+          onPressed: () {
+            scafforlKey.currentState.showSnackBar(
+              SnackBar(
+                content: Text("Flutter SnackBar snackbar"),
+              ),
+            );
+          },
+        ),
       ),
     );
   }
