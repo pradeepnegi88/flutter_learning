@@ -52,40 +52,43 @@ class SimpleAlertDialogWidget extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              showGeneralDialog(
-                  context: context,
-                  barrierLabel: MaterialLocalizations.of(context)
-                      .modalBarrierDismissLabel,
-                  barrierColor: Colors.black,
-                  transitionDuration: Duration(microseconds: 2000),
-                  pageBuilder: (BuildContext context, Animation first,
-                      Animation second) {
-                    return Center(
-                      child: Container(
-                        width: MediaQuery.of(context).size.width - 10,
-                        height: MediaQuery.of(context).size.height - 80,
-                        padding: EdgeInsets.all(20.0),
-                        color: Colors.blue,
-                        child: Column(
-                          children: [
-                            RaisedButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text("Cancel"),
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                  barrierDismissible: true);
+              buildShowGeneralDialog(context);
             },
             child: Text("Show Full Screen Dialog "),
           )
         ],
       ),
     );
+  }
+
+  Future buildShowGeneralDialog(BuildContext context) {
+    return showGeneralDialog(
+        context: context,
+        barrierLabel:
+            MaterialLocalizations.of(context).modalBarrierDismissLabel,
+        barrierColor: Colors.black,
+        transitionDuration: Duration(microseconds: 2000),
+        pageBuilder: (BuildContext context, Animation first, Animation second) {
+          return Center(
+            child: Container(
+              width: MediaQuery.of(context).size.width - 10,
+              height: MediaQuery.of(context).size.height - 80,
+              padding: EdgeInsets.all(20.0),
+              color: Colors.blue,
+              child: Column(
+                children: [
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text("Cancel"),
+                  )
+                ],
+              ),
+            ),
+          );
+        },
+        barrierDismissible: true);
   }
 
   Future buildShowCustomDialogTwo(BuildContext context) {
