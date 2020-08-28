@@ -46,22 +46,59 @@ class SimpleAlertDialogWidget extends StatelessWidget {
           ),
           RaisedButton(
             onPressed: () {
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return CustomDialogTwo(
-                      title: "TO Continue",
-                      description:
-                          "Description data here just to check the custom dialog",
-                      buttonText: "Submit",
-                    );
-                  });
+              buildShowCustomDialogTwo(context);
             },
             child: Text("Show Custom Dialog Two "),
+          ),
+          RaisedButton(
+            onPressed: () {
+              showGeneralDialog(
+                  context: context,
+                  barrierLabel: MaterialLocalizations.of(context)
+                      .modalBarrierDismissLabel,
+                  barrierColor: Colors.black,
+                  transitionDuration: Duration(microseconds: 2000),
+                  pageBuilder: (BuildContext context, Animation first,
+                      Animation second) {
+                    return Center(
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 10,
+                        height: MediaQuery.of(context).size.height - 80,
+                        padding: EdgeInsets.all(20.0),
+                        color: Colors.blue,
+                        child: Column(
+                          children: [
+                            RaisedButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text("Cancel"),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                  barrierDismissible: true);
+            },
+            child: Text("Show Full Screen Dialog "),
           )
         ],
       ),
     );
+  }
+
+  Future buildShowCustomDialogTwo(BuildContext context) {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return CustomDialogTwo(
+            title: "TO Continue",
+            description:
+                "Description data here just to check the custom dialog",
+            buttonText: "Submit",
+          );
+        });
   }
 
   Future buildShowCustomDialog(BuildContext context) {
