@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 //1. List (Good for small items, it creates objects )
 //2.ListView.builder (Build children on demand inifinite, recycles the objects)
 //3. Listview.separated (Fixed number of items and gives the facility of seperator view)
-//4.ListView.custom
+//4.ListView.custom (It takes silverchilddelegate control the algorithm used to estimate the size of the children taht are not actually visible)
 class ListViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,29 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("List View Examples"),
       ),
-      body: ListViewSeparatedWidget(colorCodes: colorCodes, entries: entries),
+      body: ListView.custom(
+        childrenDelegate: SliverChildListDelegate(
+          List.generate(
+            100,
+            (index) => Container(
+              color: Colors.redAccent,
+              height: 200,
+              margin: EdgeInsets.only(bottom: 8),
+              child: Center(
+                child: ListTile(
+                  leading: Icon(
+                    Icons.cake,
+                    size: 100,
+                    color: Colors.white,
+                  ),
+                  title: Text("title $index"),
+                  subtitle: Text("subtitle $index"),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
