@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // There are four ways to create listview
 //1. List (Good for small items, it creates objects )
-//2.ListView.builder
+//2.ListView.builder (Build children on demand inifinite, recycles the objects)
 //3. Listview.separated
 //4.ListView.custom
 class ListViewWidget extends StatelessWidget {
@@ -21,13 +21,41 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final List<String> entries = ["Box1", "Box2", "Box3", "Box4", "Box5"];
+  final List<int> colorCodes = [100, 200, 300, 400, 700];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("List View Examples"),
       ),
-      body: NormalList(),
+      body: ListViewBuilderWidget(colorCodes: colorCodes, entries: entries),
+    );
+  }
+}
+
+class ListViewBuilderWidget extends StatelessWidget {
+  const ListViewBuilderWidget({
+    Key key,
+    @required this.colorCodes,
+    @required this.entries,
+  }) : super(key: key);
+
+  final List<int> colorCodes;
+  final List<String> entries;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      itemBuilder: (context, index) {
+        return Container(
+          height: 200,
+          color: Colors.red[colorCodes[index]],
+          child: Text(entries[index]),
+        );
+      },
+      itemCount: entries.length,
     );
   }
 }
