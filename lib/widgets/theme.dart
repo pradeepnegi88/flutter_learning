@@ -48,7 +48,16 @@ class TabController extends StatelessWidget {
               ),
             ],
           )),
-          Center(child: Icon(Icons.directions_car)),
+          Column(
+            children: [
+              Center(child: Icon(Icons.directions_car)),
+              SizedBox(height: 10),
+              Text(
+                "Flutter Second Text",
+                style: Theme.of(context).textTheme.headline1,
+              ),
+            ],
+          ),
           Center(child: Icon(Icons.directions_bus)),
         ]),
         floatingActionButton: Theme(
