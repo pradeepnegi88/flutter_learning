@@ -10,15 +10,7 @@ class GridViewWidget extends StatelessWidget {
   }
 }
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  final List<String> entries = ["Box1", "Box2", "Box3", "Box4", "Box5"];
-  final List<int> colorCodes = [100, 200, 300, 400, 700];
-
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
