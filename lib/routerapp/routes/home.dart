@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/routerapp/routes/second.dart';
 
 class Home extends StatelessWidget {
-  const Home({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +17,13 @@ class Home extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SecondScreen(),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => SecondScreen(),
+                  //   ),
+                  // );
+                  Navigator.pushNamed(context, "/second");
                 },
                 child: Text("Open Home"),
               )

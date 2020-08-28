@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/routerapp/routes/home.dart';
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({
@@ -22,12 +21,13 @@ class SecondScreen extends StatelessWidget {
               ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Home(),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => Home(),
+                  //   ),
+                  // );
+                  Navigator.pushNamed(context, "/");
                 },
                 child: Text("Open Third Screen"),
               )

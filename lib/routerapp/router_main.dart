@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/routerapp/routes/home.dart';
+import 'package:myapp/routerapp/routes/second.dart';
 
 /*
  Routers are two types:
- 1. On the fly Routes
+ 1. On the fly Routes(Code duplication)
  2. Named Routes
 **/
 
@@ -16,7 +17,12 @@ class RouterWidget extends StatelessWidget {
         primarySwatch: Colors.green,
         canvasColor: Colors.green.shade200,
       ),
-      home: Home(),
+      // home: Home(),
+      initialRoute: "/",
+      routes: {
+        "/": (context) => Home(),
+        "/second": (context) => SecondScreen()
+      },
     );
   }
 }
