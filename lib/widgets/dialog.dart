@@ -26,7 +26,15 @@ class Home extends StatelessWidget {
                   context: context,
                   builder: (BuildContext context) => AlertDialog(
                     title: Text("My Alert Dialog"),
-                    content: Text("This is the Alert Dialog content ........ "),
+                    content: Container(
+                      height: 300,
+                      child: Column(
+                        children: [
+                          Image.asset("images/lake.jpg", fit: BoxFit.cover),
+                          Text("This is the Alert Dialog content ........ "),
+                        ],
+                      ),
+                    ),
                     actions: [
                       RaisedButton(
                           onPressed: () {
