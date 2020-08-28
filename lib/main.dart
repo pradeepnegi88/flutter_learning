@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/listviewexample.dart';
+import 'package:myapp/widgets/gridview.dart';
 
-void main() => runApp(ListViewWidget());
+void main() => runApp(GridViewWidget());

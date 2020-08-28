@@ -30,24 +30,35 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text("List View Examples"),
       ),
-      body: ListView.custom(
-        childrenDelegate: SliverChildListDelegate(
-          List.generate(
-            100,
-            (index) => Container(
-              color: Colors.redAccent,
-              height: 200,
-              margin: EdgeInsets.only(bottom: 8),
-              child: Center(
-                child: ListTile(
-                  leading: Icon(
-                    Icons.cake,
-                    size: 100,
-                    color: Colors.white,
-                  ),
-                  title: Text("title $index"),
-                  subtitle: Text("subtitle $index"),
+      body: ListViewCustomWidget(),
+    );
+  }
+}
+
+class ListViewCustomWidget extends StatelessWidget {
+  const ListViewCustomWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.custom(
+      childrenDelegate: SliverChildListDelegate(
+        List.generate(
+          100,
+          (index) => Container(
+            color: Colors.redAccent,
+            height: 200,
+            margin: EdgeInsets.only(bottom: 8),
+            child: Center(
+              child: ListTile(
+                leading: Icon(
+                  Icons.cake,
+                  size: 100,
+                  color: Colors.white,
                 ),
+                title: Text("title $index"),
+                subtitle: Text("subtitle $index"),
               ),
             ),
           ),
