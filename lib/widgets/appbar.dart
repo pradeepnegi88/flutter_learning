@@ -78,6 +78,7 @@ class _AppBarWidgetState extends State<AppBarWidget> {
 
   actionItems() {
     choice
+        .skip(3)
         .map(
           (value) => IconButton(
             focusColor: Colors.blue,
