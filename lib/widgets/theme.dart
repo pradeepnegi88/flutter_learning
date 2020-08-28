@@ -50,8 +50,10 @@ class TabController extends StatelessWidget {
           Center(child: Icon(Icons.directions_car)),
           Center(child: Icon(Icons.directions_bus)),
         ]),
-        floatingActionButton:
-            FloatingActionButton(onPressed: () {}, child: Text("Add")),
+        floatingActionButton: Theme(
+            data: ThemeData(iconTheme: IconThemeData(size: 20)),
+            child:
+                FloatingActionButton(onPressed: () {}, child: Icon(Icons.add))),
       ),
     );
   }
