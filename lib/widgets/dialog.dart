@@ -45,7 +45,18 @@ class SimpleAlertDialogWidget extends StatelessWidget {
             child: Text("Show Custom Dialog One "),
           ),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomDialogTwo(
+                      title: "TO Continue",
+                      description:
+                          "Description data here just to check the custom dialog",
+                      buttonText: "Submit",
+                    );
+                  });
+            },
             child: Text("Show Custom Dialog Two "),
           )
         ],
@@ -114,6 +125,80 @@ class SimpleAlertDialogWidget extends StatelessWidget {
                 Navigator.of(context).pop();
               },
               child: Text("Close"))
+        ],
+      ),
+    );
+  }
+}
+
+class Consts {
+  Consts._();
+  static const double padding = 16;
+  static const double avatarRadius = 66;
+}
+
+class CustomDialogTwo extends StatelessWidget {
+  final String title, description, buttonText;
+  final Image image;
+  CustomDialogTwo({this.title, this.description, this.buttonText, this.image});
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(Consts.padding),
+      ),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      child: Stack(
+        children: [
+          Container(
+            padding: EdgeInsets.only(
+              top: Consts.avatarRadius + Consts.padding,
+              bottom: Consts.padding,
+              left: Consts.padding,
+              right: Consts.padding,
+            ),
+            margin: EdgeInsets.only(top: Consts.avatarRadius),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.circular(Consts.padding),
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black, blurRadius: 10, offset: Offset(0, 10))
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(title,
+                    style:
+                        TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
+                SizedBox(height: 16),
+                Text(description,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16)),
+                SizedBox(height: 24),
+                Align(
+                  alignment: Alignment.bottomRight,
+                  child: FlatButton(
+                    child: Text(buttonText),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                )
+              ],
+            ),
+          ),
+          Positioned(
+            left: Consts.padding,
+            right: Consts.padding,
+            child: CircleAvatar(
+              backgroundColor: Colors.blue,
+              radius: Consts.avatarRadius,
+            ),
+          )
         ],
       ),
     );
