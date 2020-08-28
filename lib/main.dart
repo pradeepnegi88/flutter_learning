@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/navigation.dart';
+import 'package:myapp/widgets/snackbar.dart';
 
-void main() => runApp(NavigationBar());
+void main() => runApp(SnackBarWidget());
