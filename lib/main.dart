@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/dialog.dart';
+import 'package:myapp/routerapp/router_main.dart';
 
-void main() => runApp(DialogWidget());
+void main() => runApp(RouterWidget());
