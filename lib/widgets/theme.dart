@@ -6,6 +6,7 @@ class ThemeWidget extends StatelessWidget {
     return MaterialApp(
       title: "Tabs",
       theme: ThemeData(
+          brightness: Brightness.dark,
           primaryColor: Colors.orange,
           accentColor: Colors.blue.shade200,
           iconTheme: IconThemeData(size: 300, color: Colors.black),
