@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/routerapp/routes/home.dart';
 import 'package:myapp/routerapp/routes/second.dart';
+import 'package:myapp/routerapp/routes/third.dart';
+
+import 'model/student.dart';
 
 /*
  Routers are two types:
@@ -12,11 +15,23 @@ class RouterWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var mainRoutes = {
-      "/": (context) => Home(),
-      "/second": (context) => SecondScreen()
+      Home.route: (context) => Home(),
+      SecondScreen.route: (context) => SecondScreen(),
+      ThirdScreen.route: (context) => ThirdScreen(),
     };
     return MaterialApp(
       title: "Router App",
+      // ignore: missing_return
+      onGenerateRoute: (settings) {
+        if (settings.name == ThirdScreen.route) {
+          final Student s = settings.arguments;
+          return MaterialPageRoute(
+            builder: (context) => ThirdScreen(name: s.name, age: s.age),
+          );
+        }
+
+        return null;
+      },
       theme: ThemeData(
         primarySwatch: Colors.green,
         canvasColor: Colors.green.shade200,

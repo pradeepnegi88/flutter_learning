@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/routerapp/model/student.dart';
+import 'package:myapp/routerapp/routes/third.dart';
 // Pass Arguements to name route
 //1. ModalRoute
 //2. onGenerateRoute
 
 class SecondScreen extends StatelessWidget {
+  static const route = "/second";
+
   const SecondScreen({
     Key key,
   }) : super(key: key);
@@ -32,7 +35,8 @@ class SecondScreen extends StatelessWidget {
                   //     builder: (context) => Home(),
                   //   ),
                   // );
-                  Navigator.pushNamed(context, "/");
+                  Navigator.pushNamed(context, ThirdScreen.route,
+                      arguments: Student(name: "Student", age: 15));
                 },
                 child: Text("Open Third Screen"),
               )
