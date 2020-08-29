@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/routerapp/model/student.dart';
+// Pass Arguements to name route
+//1. ModalRoute
+//2. onGenerateRoute
 
 class SecondScreen extends StatelessWidget {
   const SecondScreen({
@@ -7,6 +11,7 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Student student = ModalRoute.of(context).settings.arguments;
     return Scaffold(
         appBar: AppBar(
           title: Text("Second Screen Title"),
@@ -16,7 +21,7 @@ class SecondScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Second Screen Page",
+                "Second Screen Page ${student.name} and ${student.age}",
                 style: Theme.of(context).textTheme.headline5,
               ),
               RaisedButton(

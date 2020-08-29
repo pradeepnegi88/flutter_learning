@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/routerapp/model/student.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -23,7 +24,8 @@ class Home extends StatelessWidget {
                   //     builder: (context) => SecondScreen(),
                   //   ),
                   // );
-                  Navigator.pushNamed(context, "/second");
+                  Navigator.pushNamed(context, "/second",
+                      arguments: Student(name: "Pradeep", age: 33));
                 },
                 child: Text("Open Home"),
               )
