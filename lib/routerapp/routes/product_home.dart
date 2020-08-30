@@ -12,13 +12,15 @@ class ProductHome extends StatelessWidget {
         title: Text("Product List"),
       ),
       body: ListView.builder(
-          itemCount: 100,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text("Product name : ${products[index].name}"),
-              trailing: Text("Price: ${products[index].price}"),
-            );
-          }),
+        itemCount: 100,
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text("Product name : ${products[index].name}"),
+            trailing: Text("Price: ${products[index].price}"),
+            onTap: () {},
+          );
+        },
+      ),
     );
   }
 }
