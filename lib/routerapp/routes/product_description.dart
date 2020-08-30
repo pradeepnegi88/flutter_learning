@@ -14,8 +14,14 @@ class ProductDescription extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text('Product name is ${product.name}'),
-            Text('Product price is ${product.price}')
+            Text(
+              'Product name is ${product.name}',
+              style: Theme.of(context).textTheme.headline5,
+            ),
+            Text(
+              'Product price is ${product.price}',
+              style: Theme.of(context).textTheme.headline4,
+            )
           ],
         ),
       ),
