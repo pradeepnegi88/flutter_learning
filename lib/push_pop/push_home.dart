@@ -26,7 +26,7 @@ class PushHome extends StatelessWidget {
           child: Text("Screen Two"),
         ),
         RaisedButton(
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () => Navigator.of(context).maybePop(),
           child: Text("back"),
         ),
       ]),
