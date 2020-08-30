@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:myapp/push_pop/screen2.dart';
 
@@ -17,7 +15,7 @@ class ScreenOne extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("Screen One"),
+            Text("Screen One "),
             SizedBox(height: 10),
             RaisedButton(
               onPressed: () {
@@ -25,8 +23,14 @@ class ScreenOne extends StatelessWidget {
                 Navigator.pushReplacement(context,
                     MaterialPageRoute(builder: (context) => ScreenTwo()));
               },
-              child: Text("Screen Two"),
+              child: Text("Screen Two pushReplacement"),
             ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(ScreenTwo.route);
+              },
+              child: Text("Screen Two Normal"),
+            )
           ],
         ),
       )),
