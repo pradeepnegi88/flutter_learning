@@ -12,7 +12,9 @@ class PushHome extends StatelessWidget {
       body: Column(children: [
         RaisedButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(ScreenOne.route);
+            // Navigator.of(context).pushNamed(ScreenOne.route);
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ScreenOne()));
           },
           child: Text("Home"),
         ),
