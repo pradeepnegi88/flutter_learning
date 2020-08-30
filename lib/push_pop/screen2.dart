@@ -30,6 +30,11 @@ class ScreenTwo extends StatelessWidget {
                   ModalRoute.withName(PushHome.route)),
               child: Text("Second screen"),
             ),
+            RaisedButton(
+              onPressed: () =>
+                  Navigator.popAndPushNamed(context, ScreenOne.route),
+              child: Text("pop"),
+            ),
           ],
         ),
       )),
