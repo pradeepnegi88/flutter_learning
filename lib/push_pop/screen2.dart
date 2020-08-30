@@ -37,7 +37,12 @@ class ScreenTwo extends StatelessWidget {
             ),
             RaisedButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: Text("back"),
+              child: Text("pop"),
+            ),
+            RaisedButton(
+              onPressed: () => Navigator.of(context)
+                  .popUntil(ModalRoute.withName(PushHome.route)),
+              child: Text("popUntil"),
             ),
           ],
         ),
