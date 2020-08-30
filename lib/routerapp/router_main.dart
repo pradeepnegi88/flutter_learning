@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/routerapp/routes/fourth.dart';
 import 'package:myapp/routerapp/routes/home.dart';
+import 'package:myapp/routerapp/routes/product_description.dart';
 import 'package:myapp/routerapp/routes/product_home.dart';
 import 'package:myapp/routerapp/routes/second.dart';
 import 'package:myapp/routerapp/routes/third.dart';
@@ -22,6 +23,7 @@ class RouterWidget extends StatelessWidget {
       ThirdScreen.route: (context) => ThirdScreen(),
       FourthScreen.route: (context) => FourthScreen(),
       ProductHome.route: (context) => ProductHome(),
+      ProductDescription.route: (context) => ProductDescription()
     };
     return MaterialApp(
       title: "Router App",
