@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/push_pop/screen1.dart';
 
 class PushHome extends StatelessWidget {
   static const route = "/";
@@ -10,7 +11,9 @@ class PushHome extends StatelessWidget {
       ),
       body: Column(children: [
         RaisedButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).pushNamed(ScreenOne.route);
+          },
           child: Text("Home"),
         ),
       ]),
