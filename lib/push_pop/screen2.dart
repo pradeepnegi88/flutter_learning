@@ -33,7 +33,11 @@ class ScreenTwo extends StatelessWidget {
             RaisedButton(
               onPressed: () =>
                   Navigator.popAndPushNamed(context, ScreenOne.route),
-              child: Text("pop"),
+              child: Text("popAndPushNamed"),
+            ),
+            RaisedButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: Text("back"),
             ),
           ],
         ),
