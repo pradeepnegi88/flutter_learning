@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/push_pop/push_home.dart';
 import 'package:myapp/push_pop/screen1.dart';
+import 'package:myapp/push_pop/screen2.dart';
 
 class PushMain extends StatelessWidget {
   @override
@@ -11,6 +12,7 @@ class PushMain extends StatelessWidget {
       routes: {
         PushHome.route: (context) => PushHome(),
         ScreenOne.route: (context) => ScreenOne(),
+        ScreenTwo.route: (context) => ScreenTwo(),
       },
       theme: ThemeData(
         canvasColor: Colors.grey.shade200,

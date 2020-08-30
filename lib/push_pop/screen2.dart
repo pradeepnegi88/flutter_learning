@@ -1,27 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/push_pop/screen2.dart';
 
-class ScreenOne extends StatelessWidget {
-  static const route = "/screen1";
+class ScreenTwo extends StatelessWidget {
+  static const route = "/screen2";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Screen One'),
+        title: Text('Screen Two'),
       ),
       body: Center(
           child: Container(
-        color: Colors.yellow,
+        color: Colors.indigo,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("Screen One"),
+            Text("Screen Two"),
             SizedBox(height: 10),
             RaisedButton(
-              onPressed: () {
-                Navigator.of(context).pushReplacementNamed(ScreenTwo.route);
-              },
-              child: Text("Screen Two"),
+              onPressed: () {},
+              child: Text("Home"),
             ),
           ],
         ),

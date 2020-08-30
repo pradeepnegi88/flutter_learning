@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/push_pop/screen1.dart';
+import 'package:myapp/push_pop/screen2.dart';
 
 class PushHome extends StatelessWidget {
   static const route = "/";
@@ -16,7 +17,13 @@ class PushHome extends StatelessWidget {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => ScreenOne()));
           },
-          child: Text("Home"),
+          child: Text("Screen One"),
+        ),
+        RaisedButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(ScreenTwo.route);
+          },
+          child: Text("Screen Two"),
         ),
       ]),
     );
