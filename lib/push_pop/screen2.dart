@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/push_pop/push_home.dart';
+import 'package:myapp/push_pop/screen1.dart';
 
 class ScreenTwo extends StatelessWidget {
   static const route = "/screen2";
@@ -21,6 +22,13 @@ class ScreenTwo extends StatelessWidget {
               onPressed: () => Navigator.of(context)
                   .pushNamedAndRemoveUntil(PushHome.route, (route) => false),
               child: Text("Home"),
+            ),
+            RaisedButton(
+              onPressed: () => Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => ScreenOne()),
+                  ModalRoute.withName(PushHome.route)),
+              child: Text("Second screen"),
             ),
           ],
         ),
