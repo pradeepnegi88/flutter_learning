@@ -3,7 +3,7 @@ import 'package:myapp/routerapp/model/product.dart';
 
 class ProductDescription extends StatelessWidget {
   static const route = "/product_description";
-  Product product;
+  final Product product;
   ProductDescription({this.product});
   @override
   Widget build(BuildContext context) {

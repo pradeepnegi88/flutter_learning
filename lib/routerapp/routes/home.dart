@@ -9,9 +9,9 @@ class Home extends StatelessWidget {
   static const route = "/";
   @override
   Widget build(BuildContext context) {
-    final ScaffoldKey = GlobalKey<ScaffoldState>();
+    final scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
-        key: ScaffoldKey,
+        key: scaffoldKey,
         appBar: AppBar(
           title: Text("Home Title"),
         ),
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
                     context,
                     FourthScreen.route,
                   );
-                  ScaffoldKey.currentState
+                  scaffoldKey.currentState
                     ..removeCurrentSnackBar()
                     ..showSnackBar(
                         SnackBar(content: Text("Data result is : $result")));

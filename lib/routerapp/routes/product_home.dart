@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/routerapp/model/product.dart';
+import 'package:myapp/routerapp/routes/product_description.dart';
 
 class ProductHome extends StatelessWidget {
   static const route = "/product";
@@ -17,7 +18,14 @@ class ProductHome extends StatelessWidget {
           return ListTile(
             title: Text("Product name : ${products[index].name}"),
             trailing: Text("Price: ${products[index].price}"),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProductDescription(
+                            product: products[index],
+                          )));
+            },
           );
         },
       ),
