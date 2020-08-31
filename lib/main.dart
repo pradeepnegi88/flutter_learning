@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/form/form_main.dart';
+import 'package:myapp/switch.dart';
 
-void main() => runApp(FormMainWidget());
+void main() => runApp(SwitchWidget());
