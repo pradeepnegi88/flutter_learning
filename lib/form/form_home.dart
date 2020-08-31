@@ -8,6 +8,19 @@ class FormHome extends StatefulWidget {
 class _FormHomeState extends State<FormHome> {
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  var focus;
+
+  @override
+  void initState() {
+    super.initState();
+    focus = FocusNode();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    focus.dispos();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +34,7 @@ class _FormHomeState extends State<FormHome> {
         child: Column(
           children: [
             TextFormField(
+              autofocus: true,
               decoration: InputDecoration(
                 hintText: "Enter your name",
               ),
@@ -31,9 +45,20 @@ class _FormHomeState extends State<FormHome> {
                 return null;
               },
             ),
+            TextFormField(
+              focusNode: focus,
+              decoration: InputDecoration(hintText: "Enter age"),
+              validator: (value) {
+                if (value.isEmpty) {
+                  return "Name is required";
+                }
+                return null;
+              },
+            ),
             SizedBox(height: 16),
             RaisedButton(
               onPressed: () {
+                focus.requestFocus();
                 if (formKey.currentState.validate()) {
                   scaffoldKey.currentState.showSnackBar(
                     SnackBar(
