@@ -10,16 +10,25 @@ class _FormHomeState extends State<FormHome> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var focus;
   var enteredString = '';
+  final mycontroller = TextEditingController();
   @override
   void initState() {
     super.initState();
     focus = FocusNode();
+    mycontroller.addListener(getLatestText);
   }
 
   @override
   void dispose() {
     super.dispose();
     focus.dispos();
+    mycontroller.dispose();
+  }
+
+  getLatestText() {
+    setState(() {
+      enteredString = mycontroller.text;
+    });
   }
 
   @override
@@ -55,6 +64,7 @@ class _FormHomeState extends State<FormHome> {
             TextFormField(
               focusNode: focus,
               decoration: InputDecoration(hintText: "Enter age"),
+              controller: mycontroller,
               validator: (value) {
                 if (value.isEmpty) {
                   return "Name is required";
