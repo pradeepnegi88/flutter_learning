@@ -9,7 +9,7 @@ class _FormHomeState extends State<FormHome> {
   final formKey = GlobalKey<FormState>();
   final scaffoldKey = GlobalKey<ScaffoldState>();
   var focus;
-
+  var enteredString = '';
   @override
   void initState() {
     super.initState();
@@ -33,7 +33,14 @@ class _FormHomeState extends State<FormHome> {
         key: formKey,
         child: Column(
           children: [
+            Text("Entered text in textformfiled is $enteredString"),
+            SizedBox(height: 16),
             TextFormField(
+              onChanged: (value) {
+                setState(() {
+                  enteredString = value;
+                });
+              },
               autofocus: true,
               decoration: InputDecoration(
                 hintText: "Enter your name",
