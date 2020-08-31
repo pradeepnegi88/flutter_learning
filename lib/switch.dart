@@ -59,6 +59,16 @@ class _SwitchWidgetState extends State<SwitchWidget> {
                 ),
               ],
             ),
+            RadioListTile(
+              title: Text("Yellow"),
+              value: Colors.yellow,
+              groupValue: selectedColor,
+              onChanged: (newValue) {
+                setState(() {
+                  selectedColor = newValue;
+                });
+              },
+            ),
           ],
         ),
       ),
