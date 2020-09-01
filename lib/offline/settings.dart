@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Settings extends StatefulWidget {
   @override
@@ -7,6 +8,25 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   int colorSelected = Colors.white.value;
+  SharedPreferences prefs;
+  saveColor(int color) async {
+    prefs = await SharedPreferences.getInstance();
+    prefs.setInt("colorSelected", color);
+  }
+
+  getColor() async {
+    prefs = await SharedPreferences.getInstance();
+    setState(() {
+      colorSelected = prefs.getInt("colorSelected") ?? Colors.white.value;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getColor();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +44,7 @@ class _SettingsState extends State<Settings> {
               setState(() {
                 colorSelected = newColor;
               });
+              saveColor(newColor);
             },
             title: Text("Green"),
           ),
@@ -34,6 +55,7 @@ class _SettingsState extends State<Settings> {
               setState(() {
                 colorSelected = newColor;
               });
+              saveColor(newColor);
             },
             title: Text("Red"),
           ),
@@ -44,6 +66,7 @@ class _SettingsState extends State<Settings> {
               setState(() {
                 colorSelected = newColor;
               });
+              saveColor(newColor);
             },
             title: Text("Orange"),
           )
