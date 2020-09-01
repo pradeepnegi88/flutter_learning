@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/switch.dart';
+import 'package:myapp/offline/shared.dart';
 
-void main() => runApp(SwitchWidget());
+void main() => runApp(SharedPreferenceWidget());
