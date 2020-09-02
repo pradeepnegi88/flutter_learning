@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/state_management/stateful_builder.dart';
+import 'package:myapp/state_management/inherited.dart';
 
-void main() => runApp(StateManagementBuilderWidget());
+void main() => runApp(InheritWidget());
