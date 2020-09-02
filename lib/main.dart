@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/sqlite/sqlite_main.dart';
+import 'package:myapp/state_management/stateful_builder.dart';
 
-void main() => runApp(SqliteWidget());
+void main() => runApp(StateManagementBuilderWidget());
