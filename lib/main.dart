@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/offline/shared.dart';
+import 'package:myapp/sqlite/sqlite_main.dart';
 
-void main() => runApp(SharedPreferenceWidget());
+void main() => runApp(SqliteWidget());
