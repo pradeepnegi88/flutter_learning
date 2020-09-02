@@ -20,43 +20,47 @@ class StateManagementBuilderHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("StateFulBuilder")),
-      body: StatefulBuilder(
-        builder: (context, state) {
-          return Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                IconButton(
-                  icon: Icon(
-                    Icons.remove,
-                    size: 50,
-                  ),
-                  onPressed: () {
-                    state(() {
-                      counter--;
-                    });
-                  },
+      body: getStateFulBuilder(),
+    );
+  }
+
+  StatefulBuilder getStateFulBuilder() {
+    return StatefulBuilder(
+      builder: (context, state) {
+        return Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                icon: Icon(
+                  Icons.remove,
+                  size: 50,
                 ),
-                Text(
-                  counter.toString(),
-                  style: TextStyle(fontSize: 100),
+                onPressed: () {
+                  state(() {
+                    counter--;
+                  });
+                },
+              ),
+              Text(
+                counter.toString(),
+                style: TextStyle(fontSize: 100),
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.add,
+                  size: 50,
                 ),
-                IconButton(
-                  icon: Icon(
-                    Icons.add,
-                    size: 50,
-                  ),
-                  onPressed: () {
-                    state(() {
-                      counter++;
-                    });
-                  },
-                )
-              ],
-            ),
-          );
-        },
-      ),
+                onPressed: () {
+                  state(() {
+                    counter++;
+                  });
+                },
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
