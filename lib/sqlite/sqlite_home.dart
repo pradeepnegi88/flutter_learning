@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/sqlite/dbhelper.dart';
+import 'package:myapp/sqlite/show_content.dart';
 
 import 'model/course.dart';
 import 'new_course.dart';
@@ -51,8 +52,15 @@ class _SqliteHomeState extends State<SqliteHome> {
                             Icons.delete,
                             color: Colors.red,
                           ),
-                          onPressed: () {},
+                          onPressed: () async {
+                            await dbHelper.deleteCourse(course.id);
+                          },
                         ),
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  ShowCourse(course: course)));
+                        },
                       ),
                     );
                   });
