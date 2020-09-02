@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/sqlite/dbhelper.dart';
+
+import 'model/course.dart';
 
 class AddCourse extends StatefulWidget {
   @override
@@ -8,6 +11,13 @@ class AddCourse extends StatefulWidget {
 class _AddCourseState extends State<AddCourse> {
   String name, content;
   int hours;
+  DBHelper dbHelper;
+  @override
+  void initState() {
+    super.initState();
+    dbHelper = DBHelper();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +60,11 @@ class _AddCourseState extends State<AddCourse> {
                 SizedBox(height: 20),
                 RaisedButton(
                   child: Text("Save"),
-                  onPressed: () {},
+                  onPressed: () async {
+                    final course = Course(
+                        {'name': name, 'content': content, 'hours': hours});
+                    int id = await dbHelper.createCourse(course);
+                  },
                 ),
               ],
             ),
