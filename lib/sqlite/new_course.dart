@@ -62,8 +62,8 @@ class _AddCourseState extends State<AddCourse> {
                   child: Text("Save"),
                   onPressed: () async {
                     final course = Course(
-                        {'name': name, 'content': content, 'hours': hours});
-                    int id = await dbHelper.createCourse(course);
+                        {"name": name, "content": content, "hours": hours});
+                    await dbHelper.createCourse(course);
                   },
                 ),
               ],

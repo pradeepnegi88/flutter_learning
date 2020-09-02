@@ -15,13 +15,16 @@ class DBHelper {
       return _db;
     }
     //define the path to the database
-    String path = join(await getDatabasesPath(), "study.db");
+    // Get a location using getDatabasesPath
+    var databasesPath = await getDatabasesPath();
+    String path = join(databasesPath, 'study.db');
     _db = await openDatabase(path, version: 1,
-        onCreate: (Database db, int version) {
+        onCreate: (Database db, int version) async {
       //create all tables here
-      db.execute(
-          "create table courses(id integre primary key autoincrement, name varchar(50), content varchar(255), hours integer)");
+      await db.execute(
+          "CREATE TABLE courses(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, content TEXT, hours INTEGER)");
     });
+
     return _db;
   }
 
