@@ -942,7 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
+import 'package:myapp/sqlite/sqlite_main.dart';
 
-import 'network/https_main.dart';
-
-void main() => runApp(NetworkMainWidget());
+void main() => runApp(SqliteWidget());

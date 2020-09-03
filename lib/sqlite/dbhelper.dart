@@ -1,4 +1,5 @@
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:sqflite/sqlite_api.dart';
 
@@ -16,13 +17,13 @@ class DBHelper {
     }
     //define the path to the database
     // Get a location using getDatabasesPath
-    var databasesPath = await getDatabasesPath();
-    String path = join(databasesPath, 'study.db');
+    var databasesPath = await getApplicationDocumentsDirectory();
+    String path = join(databasesPath.uri.toString(), 'study.db');
     _db = await openDatabase(path, version: 1,
         onCreate: (Database db, int version) async {
       //create all tables here
-      await db.execute(
-          "CREATE TABLE courses(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, content TEXT, hours INTEGER)");
+      await db.execute("""
+CREATE TABLE courses(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, content TEXT, hours INTEGER)""");
     });
 
     return _db;
