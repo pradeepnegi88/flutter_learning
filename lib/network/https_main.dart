@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+
+import 'model/post.dart';
 
 class NetworkMainWidget extends StatelessWidget {
   @override
@@ -20,10 +24,11 @@ class NetworkHome extends StatefulWidget {
 }
 
 class _NetworkHomeState extends State<NetworkHome> {
+  Future<Post> futurePost;
   @override
   void initState() {
     super.initState();
-    getPostById(1);
+    futurePost = getPostById(1);
   }
 
   @override
@@ -33,17 +38,27 @@ class _NetworkHomeState extends State<NetworkHome> {
         title: Text("Network http"),
       ),
       body: Center(
-        child: Text("Network"),
+        child: FutureBuilder(
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return Text(snapshot.data.title);
+            } else if (snapshot.hasError) {
+              return Text(snapshot.error);
+            }
+            return CircularProgressIndicator();
+          },
+          future: futurePost,
+        ),
       ),
     );
   }
 
-  Future<http.Response> getPostById(int id) async {
+  Future<Post> getPostById(int id) async {
     http.Response post =
         await http.get("https://jsonplaceholder.typicode.com/posts/$id");
     if (post.statusCode == 200) {
       print(post.body);
-      return null;
+      return Post.fromJson(json.decode(post.body));
     } else {
       throw Exception("Can't load the post");
     }
