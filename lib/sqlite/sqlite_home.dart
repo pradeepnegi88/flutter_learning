@@ -52,6 +52,7 @@ class _SqliteHomeState extends State<SqliteHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        brightness: Brightness.dark,
         title: Text("Sqlite"),
         actions: [
           IconButton(
