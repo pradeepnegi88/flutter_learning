@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/state_management/inherited.dart';
+import 'bloc/bloc_main.dart';
 
-void main() => runApp(InheritWidget());
+void main() => runApp(BlocMainWidget());
