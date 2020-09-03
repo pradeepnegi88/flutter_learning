@@ -942,6 +942,7 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'bloc/bloc_main.dart';
 
-void main() => runApp(BlocMainWidget());
+import 'network/https_main.dart';
+
+void main() => runApp(NetworkMainWidget());
