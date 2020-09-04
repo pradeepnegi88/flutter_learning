@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/repository/bloc_pattern.dart';
+import 'package:myapp/provider/provider_main.dart';
 
-void main() => runApp(BlocPatternWidget());
+void main() => runApp(ProviderMainWidget());
