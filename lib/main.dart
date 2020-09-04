@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/sqlite/sqlite_main.dart';
+import 'package:myapp/repository/bloc_pattern.dart';
 
-void main() => runApp(SqliteWidget());
+void main() => runApp(BlocPatternWidget());

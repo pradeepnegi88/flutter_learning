@@ -35,8 +35,6 @@ dependencies:
   bloc:
   flutter_bloc:
   http:
-  equatbale:
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
