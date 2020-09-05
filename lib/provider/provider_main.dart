@@ -70,6 +70,7 @@ class ProviderHomeWidget extends StatelessWidget {
               },
             ),
             TextDisplay(),
+            AnotherExample()
           ],
         ),
       ),
@@ -85,6 +86,32 @@ class TextDisplay extends StatelessWidget {
     return Text(
       muCounter.toString(),
       style: TextStyle(fontSize: 50),
+    );
+  }
+}
+
+class AnotherExample extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    var myModel = context.select((MyCounter value) => value.counter);
+    return Center(
+      child: Column(
+        children: [
+          IconButton(
+            icon: Icon(
+              Icons.add,
+              size: 50,
+            ),
+            onPressed: () {
+              Provider.of<MyCounter>(context, listen: false).inc();
+            },
+          ),
+          Text(
+            myModel.toString(),
+            style: TextStyle(fontSize: 50),
+          ),
+        ],
+      ),
     );
   }
 }
