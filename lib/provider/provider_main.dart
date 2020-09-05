@@ -68,10 +68,23 @@ class ProviderHomeWidget extends StatelessWidget {
               onPressed: () {
                 model.inc();
               },
-            )
+            ),
+            TextDisplay(),
           ],
         ),
       ),
+    );
+  }
+}
+
+class TextDisplay extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //only read
+    var muCounter = context.select((MyCounter value) => value.counter);
+    return Text(
+      muCounter.toString(),
+      style: TextStyle(fontSize: 50),
     );
   }
 }
