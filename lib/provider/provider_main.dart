@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/provider/provider_second.dart';
+import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 import 'mycounter.dart';
@@ -25,6 +26,7 @@ class ProviderHomeWidget extends StatelessWidget {
   int counter = 0;
   @override
   Widget build(BuildContext context) {
+    var model = context.watch<MyCounter>();
     return Scaffold(
       appBar: AppBar(
         title: Text("Provider"),
@@ -58,6 +60,15 @@ class ProviderHomeWidget extends StatelessWidget {
                 style: TextStyle(fontSize: 50),
               );
             }),
+            IconButton(
+              icon: Icon(
+                Icons.add,
+                size: 50,
+              ),
+              onPressed: () {
+                model.inc();
+              },
+            )
           ],
         ),
       ),
