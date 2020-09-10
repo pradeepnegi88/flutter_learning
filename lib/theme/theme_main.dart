@@ -1,16 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'app_state.dart';
 import 'app_theme.dart';
 
 class ThemeMaiWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "Theme Example",
-        theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        home: TaskPage());
+    return ChangeNotifierProvider<AppState>(
+      create: (context) => AppState(),
+      child: Consumer<AppState>(
+        builder: (context, appState, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              title: "Theme Example",
+              theme: AppTheme.lightTheme,
+              themeMode:
+                  appState.isDarkModeOn ? ThemeMode.dark : ThemeMode.light,
+              darkTheme: AppTheme.darkTheme,
+              home: TaskPage());
+        },
+      ),
+    );
   }
 }
 
@@ -61,6 +72,21 @@ class TaskPage extends StatelessWidget {
               ),
             ),
           ),
+        ),
+        Spacer(),
+        Padding(
+          padding: EdgeInsets.all(16.0),
+          child: Row(children: [
+            Text("Dark Mode", style: Theme.of(context).textTheme.bodyText1),
+            Spacer(),
+            Switch(
+              value: Provider.of<AppState>(context).isDarkModeOn,
+              onChanged: (newValue) {
+                Provider.of<AppState>(context, listen: false)
+                    .updateTheTheme(newValue);
+              },
+            )
+          ]),
         )
       ]),
     );
