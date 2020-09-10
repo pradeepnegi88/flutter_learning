@@ -9,7 +9,7 @@ class ThemeMaiWidget extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: "Theme Example",
         theme: AppTheme.lightTheme,
-        darkTheme: ThemeData.dark(),
+        darkTheme: AppTheme.darkTheme,
         home: TaskPage());
   }
 }
