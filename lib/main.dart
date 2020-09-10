@@ -942,6 +942,6 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/provider/provider_main.dart';
+import 'package:myapp/responsive/responsive_main.dart';
 
-void main() => runApp(ProviderMainWidget());
+void main() => runApp(ResponsiveMainWidget());

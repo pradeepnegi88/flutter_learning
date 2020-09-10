@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/provider/provider_second.dart';
-import 'package:path/path.dart';
 import 'package:provider/provider.dart';
 
 import 'mycounter.dart';
