@@ -942,6 +942,7 @@
 ////////////////////////////////////////////////
 
 import 'package:flutter/material.dart';
-import 'package:myapp/theme/theme_main.dart';
 
-void main() => runApp(ThemeMaiWidget());
+import 'drawer_animation/drawer_animation.dart';
+
+void main() => runApp(DrawerMainAnimationWidget());
