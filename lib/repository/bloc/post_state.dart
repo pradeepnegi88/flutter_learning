@@ -12,6 +12,7 @@ class PostLoaded extends PostState {
   PostLoaded(this.posts);
 }
 
+// ignore: must_be_immutable
 class PostError extends PostState {
   String message;
   PostError(this.message);
